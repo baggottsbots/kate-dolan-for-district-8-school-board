@@ -1,0 +1,79 @@
+/* ===== BASE TYPOGRAPHY ===== */
+    /* DM Sans keeps paragraphs, navigation and form surroundings easy to read. */
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: #10213f;
+      background: #f6f9fd;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== EDITORIAL HEADINGS ===== */
+    /* Use the serif class on headlines and the candidate's personal quote. */
+    .font-editorial {
+      font-family: "Libre Baskerville", Georgia, serif;
+    }
+
+    /* ===== TEXT SELECTION ===== */
+    /* Navy on gold preserves the campaign palette and readable contrast. */
+    ::selection {
+      color: #021942;
+      background: #f6c137;
+    }
+
+    /* ===== KEYBOARD ACCESSIBILITY ===== */
+    /* A consistent, high-contrast focus ring makes controls easy to locate. */
+    :focus-visible {
+      outline: 3px solid #a56800;
+      outline-offset: 5px;
+    }
+
+    /* ===== HIDDEN ELEMENTS ===== */
+    /* Preserve native hidden behavior even when utility display classes exist. */
+    [hidden] {
+      display: none !important;
+    }
+
+    /* ===== ANCHOR SPACING ===== */
+    /* Leave room above focused sections for the sticky navigation. */
+    main,
+    section {
+      scroll-margin-top: 115px;
+    }
+
+    /* ===== ANIMATION FALLBACK ===== */
+    /* A failed CDN request or disabled JavaScript must never hide page content. */
+    html:not(.aos-ready) [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+
+    /* ===== VOTING ACCORDIONS ===== */
+    /* Replace the browser disclosure triangle with the accessible plus icon. */
+    .voting-faq summary {
+      list-style: none;
+    }
+
+    /* WebKit needs its own rule to suppress the default disclosure marker. */
+    .voting-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* An open accordion changes the plus icon into a minus. */
+    .voting-faq[open] .faq-plus-vertical {
+      opacity: 0;
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    /* Keep navigation and decorative transitions calm when requested. */
+    @media (prefers-reduced-motion: reduce) {
+      /* Disable nonessential transitions without hiding any content. */
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
